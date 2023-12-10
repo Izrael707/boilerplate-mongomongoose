@@ -1,67 +1,76 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_URI, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
 
 let Person;
 
 let personSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  age: Number,
-  favoriteFoods: [String],
-})
+	name: {
+		type: String,
+		required: true,
+	},
+	age: Number,
+	favoriteFoods: [String],
+});
 
-Person = mongoose.model("Person", personSchema)
+Person = mongoose.model("Person", personSchema);
 
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+	let document = new Person({
+		name: "Israel",
+		age: 24,
+		favoriteFoods: ["rice", "beans"],
+	});
+	document.save((err, data) => err && console.log(err));
+	done(null /*, data*/);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findOneByFood = (food, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
+	const foodToAdd = "hamburger";
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const findAndUpdate = (personName, done) => {
-  const ageToSet = 20;
+	const ageToSet = 20;
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const removeById = (personId, done) => {
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
+	const nameToRemove = "Mary";
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 const queryChain = (done) => {
-  const foodToSearch = "burrito";
+	const foodToSearch = "burrito";
 
-  done(null /*, data*/);
+	done(null /*, data*/);
 };
 
 /** **Well Done !!**
