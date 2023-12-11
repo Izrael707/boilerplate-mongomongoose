@@ -29,7 +29,6 @@ const createAndSavePerson = (done) => {
     if(err) console.log(err);
     if(data) console.log(data);
   })
-	if (error) return done(error);
 	done(null, doc);
 };
 
