@@ -25,7 +25,7 @@ const createAndSavePerson = (done) => {
 		age: 24,
 		favoriteFoods: ["rice", "beans"],
 	});
-	doc.save().then(doc => console.log(doc).catch((err) => console.log(err)))
+	doc.save(function(err,data){})
 	done(null /*, data */);
 };
 
